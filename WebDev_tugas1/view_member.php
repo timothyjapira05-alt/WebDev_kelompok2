@@ -51,7 +51,10 @@
                         <td><?=$Student->class?></td>
                         <td>
                             <button type="button" class="btn btn-warning">Update</button>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <a href="controller_member.php?deleteID=<?=$index?>">
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </a>
+                            
                         </td>
                     </tr>
                     <?php

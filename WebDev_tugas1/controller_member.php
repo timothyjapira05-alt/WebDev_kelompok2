@@ -21,9 +21,17 @@ function getAllStudent(){
     return  $_SESSION['liststudent'];
 }
 
+function deleteMember($studentIndex){
+    unset($_SESSION['liststudent'][$studentIndex]);
+}
 
 if (isset($_POST['button_addStudent'])) {
     addStudent();
+    header("Location:view_member.php");
+}
+
+if (isset($_GET['deleteID'])) {
+   deleteMember($_GET['deleteID']);
     header("Location:view_member.php");
 }
 ?>
