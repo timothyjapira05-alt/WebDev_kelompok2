@@ -1,3 +1,4 @@
+<?php include("controller_member.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,30 +29,23 @@
             <div class="card-body">
 
                 <h1>Add Student</h1>
-                <form>
-                    <div class="form-row">
+                <form method="POST" action="controller_member.php">
+                    <div class=" form-row">
                         <div class="form-group col-md-6">
                             <label for="inputName">Name</label>
-                            <input type="name" class="form-control" id="inputName" placeholder="Name">
+                            <input type="name" class="form-control" name="inputName">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputPhone">Phone</label>
-                            <input type="phone" class="form-control" id="inputPhone" placeholder="Phone">
+                            <input type="phone" class="form-control" name="inputPhone">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputAddress">Class</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                        <input type="text" class="form-control" name="inputAddress">
                     </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">
-                                Check me out
-                            </label>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+
+                    <button name=" button_addStudent" type="submit" class="btn btn-primary">ADD STUDENT</button>
                 </form>
 
             </div>

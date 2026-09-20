@@ -37,13 +37,16 @@
                     </tr>
                 </thead>
                 <tbody>
+
+
                     <tr>
                         <th scope="row">1</th>
                         <td>Mark</td>
                         <td>Otto</td>
                         <td>IPA 1</td>
-                        <td><button type="button" class="btn btn-danger">Danger</button>
-                            <button type="button" class="btn btn-warning">Warning</button>
+                        <td>
+                            <button type="button" class="btn btn-warning">Update</button>
+                            <button type="button" class="btn btn-danger">Delete</button>
                         </td>
                     </tr>
                 </tbody>

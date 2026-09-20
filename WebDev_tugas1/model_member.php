@@ -1,6 +1,6 @@
 <?php
 
-class member{
+class Student{
     public $name;
     public $phone;
     public $class;
