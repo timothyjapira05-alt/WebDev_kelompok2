@@ -22,14 +22,21 @@ require("controller_member.php");
             <div class="card-header">
                 <ul class="nav nav-pills card-header-pills">
                     <li class="nav-item">
-                        <a class="nav-link" href="view_member.php">View</a>
+                        <a class="nav-link" href="view_member.php">View Member</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="view_addMember.php">Add</a>
+                        <a class="nav-link" href="view_addMember.php">Add Member</a>
                     </li>
-                    <li class=" nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_classroom.php">View Classroom</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_addClassroom.php">Add Classroom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_member_classroom.php">Member-Classroom</a>
+                    </li>
+                    
                 </ul>
             </div>
             <div class="card-body">
@@ -46,19 +53,15 @@ require("controller_member.php");
                             <input type="nim" class="form-control" name="inputNIM" value="<?=$Student->nim?>">
                         </div>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
+                    
+                        <div class="form-group">
                             <label for="inputGender">Gender</label>
                             <input type="text" class="form-control" name="inputGender" value="<?=$Student->gender?>">
                         </div>
-                        <div class="form-group col-md-6">
-                            <label for="inputAddress">Class</label>
-                            <input type="text" class="form-control" name="inputAddress" value="<?=$Student->class?>">
-                        </div>
-                    </div>
+                    
 
                     <input type="hidden" name="input_id" value="<?=$Student_id?>">
-                    <button name=" button_updateStudent" type="submit" class="btn btn-primary">Update</button>
+                    <button name="button_updateStudent" type="submit" class="btn btn-primary">Update</button>
                 </form>
 
             </div>

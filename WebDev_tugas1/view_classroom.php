@@ -1,0 +1,77 @@
+<?php require("controller_classroom.php"); ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>View Classroom</title>
+</head>
+
+<body>
+    <div class="container p-3">
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_member.php">View Member</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_addMember.php">Add Member</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="view_classroom.php">View Classroom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_addClassroom.php">Add Classroom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_member_classroom.php">Member-Classroom</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <h1>Classrooms</h1>
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Classroom</th>
+                        <th scope="col">Teacher</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $counter = 0;
+                    $allClassroom = getAllClassroom();
+                    foreach ($allClassroom as $index => $Classroom) {
+                        $counter++;
+                        ?>
+                        <tr>
+                            <th scope="row"><?= $counter ?></th>
+                            <td><?= $Classroom->className ?></td>
+                            <td><?= $Classroom->teacher ?></td>
+                            <td>
+                                <a href="view_updateClassroom.php?updateID=<?= $index ?>">
+                                    <button type="button" class="btn btn-warning">Update</button>
+                                </a>
+                                <a href="controller_classroom.php?deleteID=<?= $index ?>">
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                </a>
+
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+
+                </tbody>
+            </table>
+        </div>
+
+</body>
+
+</html>

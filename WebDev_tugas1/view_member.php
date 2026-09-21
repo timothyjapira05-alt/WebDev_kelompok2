@@ -16,25 +16,31 @@
             <div class="card-header">
                 <ul class="nav nav-pills card-header-pills">
                     <li class="nav-item">
-                        <a class="nav-link active" href="view_member.php">View</a>
+                        <a class="nav-link active" href="view_member.php">View Member</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="view_addMember.php">Add</a>
+                        <a class="nav-link" href="view_addMember.php">Add Member</a>
                     </li>
-                    <li class=" nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_classroom.php">View Classroom</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_addClassroom.php">Add Classroom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="view_member_classroom.php">Member-Classroom</a>
+                    </li>
+                    
                 </ul>
             </div>
-            <h1>Timothy</h1>
+            <h1>View Member</h1>
             <table class="table table-bordered table-dark">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Name</th>
-                        <th scope="col">NIM</th>
+                        <th scope="col">NIS</th>
                         <th scope="col">Gender</th>
-                        <th scope="col">Class</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -50,7 +56,6 @@
                             <td><?= $Student->name ?></td>
                             <td><?= $Student->nim ?></td>
                             <td><?= $Student->gender ?></td>
-                            <td><?= $Student->class ?></td>
                             <td>
                                 <a href="view_updateMember.php?updateID=<?= $index ?>">
                                     <button type="button" class="btn btn-warning">Update</button>
