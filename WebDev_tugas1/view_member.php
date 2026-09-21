@@ -50,6 +50,7 @@
                         <td><?=$Student->phone?></td>
                         <td><?=$Student->class?></td>
                         <td>
+                            <a href="view_updateMember.php?updateID=<?=$index?>"></a>
                             <button type="button" class="btn btn-warning">Update</button>
                             <a href="controller_member.php?deleteID=<?=$index?>">
                                 <button type="button" class="btn btn-danger">Delete</button>
