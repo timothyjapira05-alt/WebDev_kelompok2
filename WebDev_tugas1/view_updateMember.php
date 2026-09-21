@@ -1,5 +1,9 @@
-<?php include("controller_member.php"); 
-
+<?php 
+require("controller_member.php");
+    if (isset($_GET["updateID"])){
+        $Student_id = $_GET["updateID"];
+         $Student = getStudentWithID($_GET["updateID"]);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +25,7 @@
                         <a class="nav-link" href="view_member.php">View</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="view_addMember.php">Add</a>
+                        <a class="nav-link" href="view_addMember.php">Add</a>
                     </li>
                     <li class=" nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
@@ -30,31 +34,31 @@
             </div>
             <div class="card-body">
 
-                <h1>Add Student</h1>
+                <h1>Update Student Data</h1>
                 <form method="POST" action="controller_member.php">
                     <div class=" form-row">
                         <div class="form-group col-md-6">
                             <label for="inputName">Name</label>
-                            <input type="name" class="form-control" name="inputName">
+                            <input type="name" class="form-control" name="inputName" value="<?=$Student->name?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputNIM">NIM</label>
-                            <input type="nim" class="form-control" name="inputNIM">
+                            <input type="nim" class="form-control" name="inputNIM" value="<?=$Student->nim?>">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <label for="inputGender">Gender</label>
-                            <input type="text" class="form-control" name="inputGender">
+                            <input type="text" class="form-control" name="inputGender" value="<?=$Student->gender?>">
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputAddress">Class</label>
-                            <input type="text" class="form-control" name="inputAddress">
+                            <input type="text" class="form-control" name="inputAddress" value="<?=$Student->class?>">
                         </div>
                     </div>
 
-
-                    <button name=" button_addStudent" type="submit" class="btn btn-primary">ADD STUDENT</button>
+                    <input type="hidden" name="input_id" value="<?=$Student_id?>">
+                    <button name=" button_updateStudent" type="submit" class="btn btn-primary">Update</button>
                 </form>
 
             </div>

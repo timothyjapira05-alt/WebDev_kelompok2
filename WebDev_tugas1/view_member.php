@@ -33,7 +33,7 @@
                         <th scope="col">No</th>
                         <th scope="col">Name</th>
                         <th scope="col">NIM</th>
-                         <th scope="col">Gender</th>
+                        <th scope="col">Gender</th>
                         <th scope="col">Class</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -42,25 +42,26 @@
                     <?php
                     $counter = 0;
                     $allStudent = getAllStudent();
-                    foreach ($allStudent as $index => $Student){
+                    foreach ($allStudent as $index => $Student) {
                         $counter++;
-                    ?>
-                    <tr>
-                        <th scope="row"><?=$counter?></th>
-                        <td><?=$Student->name?></td>
-                        <td><?=$Student->nim?></td>
-                        <td><?=$Student->gender?></td>
-                        <td><?=$Student->class?></td>
-                        <td>
-                            <a href="view_updateMember.php?updateID=<?=$index?>"></a>
-                            <button type="button" class="btn btn-warning">Update</button>
-                            <a href="controller_member.php?deleteID=<?=$index?>">
-                                <button type="button" class="btn btn-danger">Delete</button>
-                            </a>
-                            
-                        </td>
-                    </tr>
-                    <?php
+                        ?>
+                        <tr>
+                            <th scope="row"><?= $counter ?></th>
+                            <td><?= $Student->name ?></td>
+                            <td><?= $Student->nim ?></td>
+                            <td><?= $Student->gender ?></td>
+                            <td><?= $Student->class ?></td>
+                            <td>
+                                <a href="view_updateMember.php?updateID=<?= $index ?>">
+                                    <button type="button" class="btn btn-warning">Update</button>
+                                </a>
+                                <a href="controller_member.php?deleteID=<?= $index ?>">
+                                    <button type="button" class="btn btn-danger">Delete</button>
+                                </a>
+
+                            </td>
+                        </tr>
+                        <?php
                     }
                     ?>
 
