@@ -1,3 +1,4 @@
+<?php require("controller_member.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +22,7 @@
                         <a class="nav-link" href="view_addMember.php">Add</a>
                     </li>
                     <li class=" nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
+                        <a class="nav-link " href="#">Disabled</a>
                     </li>
                 </ul>
             </div>
@@ -37,18 +38,26 @@
                     </tr>
                 </thead>
                 <tbody>
-
-
+                    <?php
+                    $counter = 0;
+                    $allStudent = getAllStudent();
+                    foreach ($allStudent as $index => $Student){
+                        $counter++;
+                    ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>IPA 1</td>
+                        <th scope="row"><?=$counter?></th>
+                        <td><?=$Student->name?></td>
+                        <td><?=$Student->phone?></td>
+                        <td><?=$Student->class?></td>
                         <td>
                             <button type="button" class="btn btn-warning">Update</button>
                             <button type="button" class="btn btn-danger">Delete</button>
                         </td>
                     </tr>
+                    <?php
+                    }
+                    ?>
+
                 </tbody>
             </table>
         </div>
