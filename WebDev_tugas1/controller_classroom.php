@@ -12,15 +12,26 @@ if (!isset($_SESSION['students'])) {
 
 function nextClassroomId()
 {
-    return empty($_SESSION['classrooms']) ? 1 : max(array_keys($_SESSION['classrooms'])) + 1;
+    if (empty($_SESSION['classrooms'])) {
+        return 1;
+    }
+    return max(array_keys($_SESSION['classrooms'])) + 1;
 }
 
 function addClassroom()
 {
     $classroom = new Classroom();
     $classroom->id = nextClassroomId();
-    $classroom->className = isset($_POST['inputClassName']) ? $_POST['inputClassName'] : '';
-    $classroom->teacher = isset($_POST['inputTeacher']) ? $_POST['inputTeacher'] : '';
+    if (isset($_POST['inputClassName'])) {
+        $classroom->className = $_POST['inputClassName'];
+    } else {
+        $classroom->className = '';
+    }
+    if (isset($_POST['inputTeacher'])) {
+        $classroom->teacher = $_POST['inputTeacher'];
+    } else {
+        $classroom->teacher = '';
+    }
     $_SESSION['classrooms'][$classroom->id] = $classroom;
 }
 
@@ -29,8 +40,16 @@ function updateClassroom($classroomID){
         return;
     }
     $classroom = $_SESSION['classrooms'][$classroomID];
-    $classroom->className = isset($_POST['inputClassName']) ? $_POST['inputClassName'] : '';
-    $classroom->teacher = isset($_POST['inputTeacher']) ? $_POST['inputTeacher'] : '';
+    if (isset($_POST['inputClassName'])) {
+        $classroom->className = $_POST['inputClassName'];
+    } else {
+        $classroom->className = '';
+    }
+    if (isset($_POST['inputTeacher'])) {
+        $classroom->teacher = $_POST['inputTeacher'];
+    } else {
+        $classroom->teacher = '';
+    }
 }
 
 function deleteClassroom($classroomIndex){

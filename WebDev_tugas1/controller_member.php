@@ -12,16 +12,31 @@ if (!isset($_SESSION['classrooms'])) {
 
 function nextStudentId()
 {
-    return empty($_SESSION['students']) ? 1 : max(array_keys($_SESSION['students'])) + 1;
+    if (empty($_SESSION['students'])) {
+        return 1;
+    }
+    return max(array_keys($_SESSION['students'])) + 1;
 }
 
 function addStudent()
 {
     $student = new Student();
     $student->id = nextStudentId();
-    $student->name = isset($_POST['inputName']) ? $_POST['inputName'] : '';
-    $student->nim = isset($_POST['inputNIM']) ? $_POST['inputNIM'] : '';
-    $student->gender = isset($_POST['inputGender']) ? $_POST['inputGender'] : '';
+    if (isset($_POST['inputName'])) {
+        $student->name = $_POST['inputName'];
+    } else {
+        $student->name = '';
+    }
+    if (isset($_POST['inputNIM'])) {
+        $student->nim = $_POST['inputNIM'];
+    } else {
+        $student->nim = '';
+    }
+    if (isset($_POST['inputGender'])) {
+        $student->gender = $_POST['inputGender'];
+    } else {
+        $student->gender = '';
+    }
     $_SESSION['students'][$student->id] = $student;
 }
 
@@ -52,9 +67,21 @@ function updateStudent($studentId)
     if ($student === null) {
         return false;
     }
-    $student->name = isset($_POST['inputName']) ? $_POST['inputName'] : '';
-    $student->nim = isset($_POST['inputNIM']) ? $_POST['inputNIM'] : '';
-    $student->gender = isset($_POST['inputGender']) ? $_POST['inputGender'] : '';
+    if (isset($_POST['inputName'])) {
+        $student->name = $_POST['inputName'];
+    } else {
+        $student->name = '';
+    }
+    if (isset($_POST['inputNIM'])) {
+        $student->nim = $_POST['inputNIM'];
+    } else {
+        $student->nim = '';
+    }
+    if (isset($_POST['inputGender'])) {
+        $student->gender = $_POST['inputGender'];
+    } else {
+        $student->gender = '';
+    }
     return true;
 }
 
