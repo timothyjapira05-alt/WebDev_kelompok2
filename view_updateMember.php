@@ -1,4 +1,6 @@
-<?php include("controller_member.php"); ?>
+<?php include("controller_member.php"); 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +21,7 @@
                         <a class="nav-link" href="view_member.php">View</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="view_addMember.php">Add</a>
+                        <a class="nav-link active" href="view_addMember.php">Add</a>
                     </li>
                     <li class=" nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
@@ -28,7 +30,7 @@
             </div>
             <div class="card-body">
 
-                <h1>Update Student Data</h1>
+                <h1>Add Student</h1>
                 <form method="POST" action="controller_member.php">
                     <div class=" form-row">
                         <div class="form-group col-md-6">
@@ -36,14 +38,21 @@
                             <input type="name" class="form-control" name="inputName">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPhone">Phone</label>
-                            <input type="phone" class="form-control" name="inputPhone">
+                            <label for="inputNIM">NIM</label>
+                            <input type="nim" class="form-control" name="inputNIM">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Class</label>
-                        <input type="text" class="form-control" name="inputAddress">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputGender">Gender</label>
+                            <input type="text" class="form-control" name="inputGender">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Class</label>
+                            <input type="text" class="form-control" name="inputAddress">
+                        </div>
                     </div>
+
 
                     <button name=" button_addStudent" type="submit" class="btn btn-primary">ADD STUDENT</button>
                 </form>

@@ -11,7 +11,8 @@ function addStudent()
 {
     $student = new Student();
     $student->name = $_POST['inputName'];
-    $student->phone = $_POST['inputPhone'];
+    $student->nim = $_POST['inputNIM'];
+    $student->gender = $_POST['inputGender'];
     $student->class = $_POST['inputAddress'];
     array_push($_SESSION['liststudent'],$student);
 }

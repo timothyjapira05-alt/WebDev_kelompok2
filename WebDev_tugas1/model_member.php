@@ -2,7 +2,8 @@
 
 class Student{
     public $name;
-    public $phone;
+    public $nim;
+    public $gender;
     public $class;
 }
 

@@ -36,14 +36,21 @@
                             <input type="name" class="form-control" name="inputName">
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="inputPhone">Phone</label>
-                            <input type="phone" class="form-control" name="inputPhone">
+                            <label for="inputNIM">NIM</label>
+                            <input type="nim" class="form-control" name="inputNIM">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="inputAddress">Class</label>
-                        <input type="text" class="form-control" name="inputAddress">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputGender">Gender</label>
+                            <input type="text" class="form-control" name="inputGender">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputAddress">Class</label>
+                            <input type="text" class="form-control" name="inputAddress">
+                        </div>
                     </div>
+
 
                     <button name=" button_addStudent" type="submit" class="btn btn-primary">ADD STUDENT</button>
                 </form>

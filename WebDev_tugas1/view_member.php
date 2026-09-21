@@ -32,7 +32,8 @@
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Phone</th>
+                        <th scope="col">NIM</th>
+                         <th scope="col">Gender</th>
                         <th scope="col">Class</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -47,7 +48,8 @@
                     <tr>
                         <th scope="row"><?=$counter?></th>
                         <td><?=$Student->name?></td>
-                        <td><?=$Student->phone?></td>
+                        <td><?=$Student->nim?></td>
+                        <td><?=$Student->gender?></td>
                         <td><?=$Student->class?></td>
                         <td>
                             <a href="view_updateMember.php?updateID=<?=$index?>"></a>
